@@ -25,12 +25,15 @@ class Thumbnail extends StatelessWidget {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => PhotoPage(photo: photo)));
       },
-      child: Container(
-          padding: const EdgeInsets.all(30),
-          child: Image.network(
-            photo.imageUrl,
-            fit: BoxFit.cover,
-          )),
+      child: Hero(
+        tag: photo.title,
+        child: Container(
+            padding: const EdgeInsets.all(2),
+            child: Image.network(
+              photo.imageUrl,
+              fit: BoxFit.cover,
+            )),
+      ),
     );
   }
 }

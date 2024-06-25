@@ -8,16 +8,19 @@ class PhotoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.network(photo.imageUrl, fit: BoxFit.cover),
-          ),
-          _buildGradient(),
-          _buildTitleAndSubtitle(photo.title, photo.subtitle)
-        ],
-      )),
+      body: Hero(
+        tag: photo.title,
+        child: Center(
+            child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.network(photo.imageUrl, fit: BoxFit.cover),
+            ),
+            _buildGradient(),
+            _buildTitleAndSubtitle(photo.title, photo.subtitle)
+          ],
+        )),
+      ),
       appBar: AppBar(title: const Text('Image')),
     );
   }
