@@ -5,21 +5,18 @@ class PhotoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-            child: Stack(
-          children: [
-            Positioned.fill(
-              child: Image.network(
-                  'https://api.pupasoft.com/public/profile.jpg',
-                  fit: BoxFit.cover),
-            ),
-            _buildGradient(),
-            _buildTitleAndSubtitle('abc', 'hello world')
-          ],
-        )),
-      ),
+    return Scaffold(
+      body: Center(
+          child: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.network('https://api.pupasoft.com/public/profile.jpg',
+                fit: BoxFit.cover),
+          ),
+          _buildGradient(),
+          _buildTitleAndSubtitle('abc', 'hello world')
+        ],
+      )),
     );
   }
 

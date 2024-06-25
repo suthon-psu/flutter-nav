@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nav/widgets/photo_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,10 +11,23 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+      home: MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => const PhotoPage()));
+        },
+        child: const Text('Hello World!'),
       ),
     );
   }
