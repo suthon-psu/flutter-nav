@@ -17,6 +17,7 @@ class PhotoPage extends StatelessWidget {
           _buildTitleAndSubtitle('abc', 'hello world')
         ],
       )),
+      appBar: AppBar(title: const Text('Image')),
     );
   }
 

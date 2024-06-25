@@ -29,6 +29,7 @@ class MainPage extends StatelessWidget {
         },
         child: const Text('Hello World!'),
       ),
+      appBar: AppBar(title: const Text('App')),
     );
   }
 }
