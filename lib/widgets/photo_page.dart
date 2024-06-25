@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nav/models/photo.dart';
 
 class PhotoPage extends StatelessWidget {
-  const PhotoPage({super.key});
+  final Photo photo;
+  const PhotoPage({super.key, required this.photo});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,10 @@ class PhotoPage extends StatelessWidget {
           child: Stack(
         children: [
           Positioned.fill(
-            child: Image.network('https://api.pupasoft.com/public/profile.jpg',
-                fit: BoxFit.cover),
+            child: Image.network(photo.imageUrl, fit: BoxFit.cover),
           ),
           _buildGradient(),
-          _buildTitleAndSubtitle('abc', 'hello world')
+          _buildTitleAndSubtitle(photo.title, photo.subtitle)
         ],
       )),
       appBar: AppBar(title: const Text('Image')),
